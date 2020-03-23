@@ -1,0 +1,25 @@
+<header class="navbar navbar-inner navbar-fixed-top">
+    <nav class="container">
+        <div class="navbar-header">
+        
+           <img src="assets/people.png" alt="logo" width="120" height="120">
+          <a href="/customers" class="app-title"> Customer Manager</a>
+          <br /> <br/>
+          
+
+
+          <span>
+             <ul class="nav navbar-nav nav-pills ">
+                <li routerLinkActive="active"><a  routerLink="/customers" >Customers</a></li>
+                <li routerLinkActive="active"><a  *ngIf="!auth.isAuthenticated" routerLink="/login">Login</a></li>
+                <li routerLinkActive="active"><a   routerLink="/register">Register</a></li> 
+                <li routerLinkActive="active"><a  *ngIf="auth.isAuthenticated" >Hoşgeldiniz, {{auth.name} </a></li>
+                <li routerLinkActive="active"><a  *ngIf="auth.isAuthenticated" (click)="auth.logout()" >Logout </a></li>
+                 
+            </ul>
+          </span>
+        </div>
+    </nav>
+</header>
+<br/>
+<br/>
